@@ -1,0 +1,110 @@
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "root", "rent");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+else
+{
+	echo "connectd";
+}
+ 
+
+
+$sql = "SELECT Fname, Minit, lname, Ssn, Bdate, Address,Gender,Salary,Super_ssn,Dno,education,branch,mob_no FROM EMPLOYEE";
+$result = $link->query($sql);
+
+
+echo'<h1>office</h1>';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">';
+
+
+echo '<table  style="font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;"> 
+      <tr> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;"> <font face="Arial">OFFICE_NAME</font> </td> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;"> <font face="Arial">MGRSSN</font> </td> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;"> <font face="Arial">ADDRESS</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+			<td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+      </tr>';
+ 
+if ($result = $link->query($sql)) {
+    while ($row = $result->fetch_assoc()) {
+        $field1name = $row["Fname"];
+        $field2name = $row["Minit"];
+        $field3name = $row["Lname"];
+        $field4name = $row["Ssn"]; 
+		$field5name = $row["Bdate"];
+        $field6name = $row["Address"];
+        $field7name = $row["Gender"];
+        $field8name = $row["Salary"]; 
+		$field9name = $row["Super_ssn"];
+        $field10name = $row["Dno"];
+        $field11name = $row["education"];
+        $field12name = $row["branch"]; 
+		$field12name = $row["mob_no"];
+		
+        echo '<tr style="  border: 1px solid blue;
+  text-align: left;
+  padding: 8px;"> 
+                  <td style=" ">'.$field1name.'</td> 
+                  <td>'.$field2name.'</td> 
+                  <td>'.$field3name.'</td> 
+                  <td>'.$field4name.'</td> 
+				  <td>'.$field5name.'</td> 
+                  <td>'.$field6name.'</td> 
+                  <td>'.$field7name.'</td> 
+				  <td>'.$field8name.'</td> 
+                  <td>'.$field9name.'</td> 
+                  <td>'.$field10name.'</td> 
+				  <td>'.$field11name.'</td> 
+                  <td>'.$field12name.'</td> 
+                  <td>'.$field13name.'</td> 
+              </tr>';
+    }
+} else {
+    echo "0 results";
+    
+}
+ 
+// Close connectionvi
+mysqli_close($link);
+?>
+

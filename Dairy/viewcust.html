@@ -1,0 +1,87 @@
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "root", "rent");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+else
+{
+	echo "connectd";
+}
+ 
+
+
+$sql = "SELECT cid, mobno, purchase_date, custumer_name FROM CUSTUMERS";
+$result = $link->query($sql);
+
+
+echo'<h1>office</h1>';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">';
+
+
+echo '<table  style="font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;"> 
+      <tr> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;"> <font face="Arial">OFFICE_ID</font> </td> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;"> <font face="Arial">OFFICE_NAME</font> </td> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;"> <font face="Arial">MGRSSN</font> </td> 
+          <td style="  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;"> <font face="Arial">ADDRESS</font> </td> 
+      </tr>';
+ 
+if ($result = $link->query($sql)) {
+    while ($row = $result->fetch_assoc()) {
+        $field1name = $row["cid"];
+        $field2name = $row["mobno"];
+        $field3name = $row["purchase_date"];
+        $field4name = $row["custumer_name"]; 
+ 
+        echo '<tr style="  border: 1px solid blue;
+  text-align: left;
+  padding: 8px;"> 
+                  <td style=" ">'.$field1name.'</td> 
+                  <td>'.$field2name.'</td> 
+                  <td>'.$field3name.'</td> 
+                  <td>'.$field4name.'</td> 
+              </tr>';
+    }
+} else {
+    echo "0 results";
+    
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

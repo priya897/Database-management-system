@@ -1,0 +1,21 @@
+INSERT into DAIRY_LOCATIONS  values('D01','Houston','texas','United States');
+INSERT into DAIRY_LOCATIONS  values('D06','Stafford','texas','United States');
+INSERT into DAIRY_LOCATIONS  values('D12','Bellaire','texas','United States');
+INSERT into DAIRY_LOCATIONS  values('D04','Sugarland','texas','United States');
+INSERT into DAIRY_LOCATIONS  values('D06','banglore','Karnataka','India');
+INSERT into DAIRY_LOCATIONS  values('D12','mysure','Karnataka','India');
+INSERT into DAIRY_LOCATIONS  values('D02','hassan','Karnataka','India');
+INSERT into DAIRY_LOCATIONS  values('D09','hassan','Karnataka','India');
+INSERT into DAIRY_LOCATIONS  values('D11','Sugarland','texas','United States');
+INSERT into DAIRY_LOCATIONS  values('D05','delhi','Delhi','India');
+INSERT into DAIRY_LOCATIONS  values('D07','mumbai','maharashtra','India');
+INSERT into DAIRY_LOCATIONS  values('D08','hyderabad','Andrapradesh','India');
+INSERT into DAIRY_LOCATIONS  values('D09','Bellaire','texas','United States');
+INSERT into DAIRY_LOCATIONS  values('D10','pune','maharashtra','India');
+INSERT into DAIRY_LOCATIONS  values('D11','banglore','karnataka','India');
+INSERT into DAIRY_LOCATIONS  values('D12','Houston','texas','United States');
+INSERT into DAIRY_LOCATIONS  values('D07','shimoga','karnataka','India');
+INSERT into DAIRY_LOCATIONS  values('D05','manglore','karnataka','India');
+INSERT into DAIRY_LOCATIONS  values('D04','ahmedabad','gujarath','India');
+INSERT into DAIRY_LOCATIONS  values('D03','chennai','Tamilnadu','India');
+
